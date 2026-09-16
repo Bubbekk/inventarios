@@ -31,9 +31,19 @@ La barra lateral no se muestra en escritorio. Es el comportamiento propio de est
 - `flux:brand`, `flux:navbar`, `flux:navlist`, `flux:sidebar`, `flux:header` y `flux:main` son componentes reales de Flux UI Pro 2.19.0, verificados en `resources/views/flux`.
 - No incorpora dependencias nuevas.
 
-## Pendiente antes de implementar
+## Reparto de módulos, resuelto el 16-09-2026
 
-Definir el reparto de los 13 módulos entre el `flux:navbar` del header y el `flux:navlist` de la página. Es una decisión de diseño de información, no técnica, y condiciona la implementación de la Fase 3.
+El `flux:navbar` del encabezado lleva cinco secciones temáticas. Cada una despliega sus módulos en el `flux:navlist` de la columna izquierda.
+
+| Sección del navbar | Módulos en el navlist |
+|---|---|
+| Inicio | sin navlist |
+| Inventario | Ítems, Tipos, Ubicaciones, Funcionarios |
+| Verificación | Procesos, Registro, Conciliación |
+| Reportes | Por proceso, Por ubicación, Por funcionario, Vencimientos |
+| Administración | Usuarios, Auditoría |
+
+Cada entrada se muestra solo si la cuenta tiene el permiso del módulo. Una sección del navbar se oculta cuando ninguna de sus subsecciones es visible.
 
 ## Antecedente
 

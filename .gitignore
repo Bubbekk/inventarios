@@ -37,9 +37,11 @@ yarn-error.log
 /boost.json
 /opencode.json
 /opencode.jsonc
+/informacion de proyecto
 
 # Asistentes de IA, agentes y MCP
-/.ai
+/.ai/*
+!/.ai/guidelines/
 /.claude.json
 /.claude.json.backup
 /.claude-*

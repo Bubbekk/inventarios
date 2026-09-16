@@ -71,6 +71,8 @@ class RolesYPermisosSeeder extends Seeder
             Permission::findOrCreate($permiso, $guard);
         }
 
+        app(PermissionRegistrar::class)->forgetCachedPermissions();
+
         $administrador = Role::findOrCreate('administrador', $guard);
         $administrador->syncPermissions($this->catalogo());
 

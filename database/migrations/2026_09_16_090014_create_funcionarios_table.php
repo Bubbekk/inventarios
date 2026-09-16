@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('funcionarios', function (Blueprint $table) {
             $table->id();
-            $table->string('rut')->unique();
+            $table->string('rut')->nullable()->unique();
             $table->string('nombres');
             $table->string('apellidos');
             $table->string('cargo')->nullable();

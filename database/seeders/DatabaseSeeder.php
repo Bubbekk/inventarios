@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RolesYPermisosSeeder::class,
             AdministradorSeeder::class,
+            TiposSeeder::class,
+            UbicacionesSeeder::class,
         ]);
 
         if (app()->environment('local')) {

@@ -16,7 +16,7 @@ TABLA: tipos
 
 TABLA: funcionarios
 - id: bigint, PK, autoincremental
-- rut: varchar, unique
+- rut: varchar, unique, nullable
 - nombres: varchar
 - apellidos: varchar
 - cargo: varchar, nullable
@@ -48,8 +48,19 @@ TABLA: users
 - name: varchar
 - email: varchar, unique
 - email_verified_at: timestamp, nullable
+- activo: boolean, default true
 - password: varchar
 - remember_token: varchar, nullable
+- created_at: timestamp
+- updated_at: timestamp
+
+TABLA: passkeys (Laravel Fortify)
+- id: bigint, PK, autoincremental
+- user_id: bigint, FK -> users.id, cascade on delete
+- name: varchar
+- credential_id: varchar, unique
+- credential: json
+- last_used_at: timestamp, nullable
 - created_at: timestamp
 - updated_at: timestamp
 
